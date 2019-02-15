@@ -19,13 +19,19 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(0);
   }); 
 
-    it("does not allow item quality to go < 0", function() {
+  it("does not allow item quality to go < 0", function() {
     const gildedRose = new Shop([ new Item("rottenBread", 0, 2) ]);
     gildedRose.updateQuality();
     gildedRose.updateQuality();
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toEqual(0);
-  });  
+  });
+
+  it("updateQuality *increases* the quality of Brie over time", function() {
+    const gildedRose = new Shop([ new Item("Aged Brie", 0, 1) ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(3);
+  });
 
 
 });
