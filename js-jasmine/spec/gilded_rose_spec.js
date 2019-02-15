@@ -57,5 +57,29 @@ describe("Gilded Rose", function() {
     expect(items[0].sellIn).toEqual(50);
   });
 
+  it("updateQuality increases Backstage pass quality as sellIn approaches", function() {
+    const gildedRose = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", 15, 10) ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(11);
+  });
+
+  it("updateQuality increases Backstage pass quality by 2 when sellIn is < 10", function() {
+    const gildedRose = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", 9, 10) ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(12);
+  });
+
+  it("updateQuality increases Backstage pass quality by 3 when sellIn is < 5", function() {
+    const gildedRose = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", 4, 10) ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(13);
+  }); 
+
+  it("updateQuality reduces Backstage pass quality to 0 when sellIn passes", function() {
+    const gildedRose = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", 1, 10) ]);
+    gildedRose.updateQuality();
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(0);
+  }); 
 
 });
