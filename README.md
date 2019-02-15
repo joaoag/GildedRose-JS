@@ -97,9 +97,9 @@ Features spec:
 
 Minimum Viable Product (MVP):
 -----
-I've decided my MVP will be the back end functionality of the balance, credit and debit behaviour.
 
-After finishing this I will implement the display requirements.
+I've decided my MVP will be refactoring the functionality of the Shop class updateQuality function into three functions in total. 
+
 
 
 
