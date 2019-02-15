@@ -7,7 +7,7 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(1);
   });
 
-  it("updates item sellIn", function() {
+  it("reduces item sellIn over time", function() {
     const gildedRose = new Shop([ new Item("Bread", 2, 2) ]);
     const items = gildedRose.updateQuality();
     expect(items[0].sellIn).toEqual(1);
