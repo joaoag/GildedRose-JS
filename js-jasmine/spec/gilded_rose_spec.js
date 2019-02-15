@@ -40,6 +40,22 @@ describe("Gilded Rose", function() {
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toEqual(50);
   });
+  
+  it("updateQuality never decreases 'Sulfuras, Hand of Ragnaros's quality", function() {
+    const gildedRose = new Shop([ new Item("Sulfuras, Hand of Ragnaros", 0, 50) ]);
+    gildedRose.updateQuality();
+    gildedRose.updateQuality();
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(50);
+  });
+
+  it("updateQuality never decreases 'Sulfuras, Hand of Ragnaros's sellIn", function() {
+    const gildedRose = new Shop([ new Item("Sulfuras, Hand of Ragnaros", 50, 50) ]);
+    gildedRose.updateQuality();
+    gildedRose.updateQuality();
+    const items = gildedRose.updateQuality();
+    expect(items[0].sellIn).toEqual(50);
+  });
 
 
 });
