@@ -27,13 +27,13 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(0);
   });
 
-  xit("updateQuality *increases* the quality of Brie over time", function() {
+  it("updateQuality *increases* the quality of Brie over time", function() {
     const gildedRose = new Shop([ new Item("Aged Brie", 0, 1) ]);
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toEqual(3);
   });
 
-  xit("updateQuality limits the quality all items to 50", function() {
+  it("updateQuality limits the quality all items to 50", function() {
     const gildedRose = new Shop([ new Item("Aged Brie", 0, 49) ]);
     gildedRose.updateQuality();
     gildedRose.updateQuality();
