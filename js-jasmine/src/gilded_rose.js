@@ -13,10 +13,14 @@ class Shop {
 
   updateQuality() {
     for (var i = 0; i < this.items.length; i ++) {
-      this.items[i].quality = this.items[i].quality - 1;
+      this.reduceQuality(this.items[i])
       this.items[i].sellIn = this.items[i].sellIn - 1;
     }
     return this.items;
+  }
+
+  reduceQuality(item) {
+    item.quality -= 1
   }
 
 
