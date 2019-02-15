@@ -13,13 +13,13 @@ describe("Gilded Rose", function() {
     expect(items[0].sellIn).toEqual(1);
   });
 
-  xit("degrades quality x2 speed once SellIn passes", function() {
+  it("degrades quality x2 speed once SellIn passes", function() {
     const gildedRose = new Shop([ new Item("rottenBread", 0, 2) ]);
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toEqual(0);
   }); 
 
-  xit("does not allow item quality to go < 0", function() {
+  it("does not allow item quality to go < 0", function() {
     const gildedRose = new Shop([ new Item("rottenBread", 0, 2) ]);
     gildedRose.updateQuality();
     gildedRose.updateQuality();
