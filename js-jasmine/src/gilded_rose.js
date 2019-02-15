@@ -22,13 +22,15 @@ class Shop {
   reduceQuality(item) {
     if (item.name == 'Aged Brie') {
       this.calculateBrieQuality(item)
+    } else if (item.name == 'Sulfuras, Hand of Ragnaros') {
+      this.calculateSulfurasQuality(item)
     } else {
       this.calculateQuality(item)
     }
   }
 
   reduceSellIn(item) {
-    item.sellIn -= 1
+    item.name != 'Sulfuras, Hand of Ragnaros' ? item.sellIn -= 1 : item.sellIn = item.sellIn
   }
 
   calculateQuality(item){
@@ -45,6 +47,10 @@ class Shop {
 
   calculateBrieQuality(item){
     item.quality >= 50 ? item.quality = 50 : item.quality += 2;
+  }
+
+  calculateSulfurasQuality(item){
+    item.quality = item.quality;
   }
 
 
