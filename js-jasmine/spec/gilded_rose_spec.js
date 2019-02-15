@@ -33,5 +33,13 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(3);
   });
 
+  it("updateQuality limits the quality all items to 50", function() {
+    const gildedRose = new Shop([ new Item("Aged Brie", 0, 49) ]);
+    gildedRose.updateQuality();
+    gildedRose.updateQuality();
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(50);
+  });
+
 
 });
