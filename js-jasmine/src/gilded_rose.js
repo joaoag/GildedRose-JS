@@ -20,11 +20,21 @@ class Shop {
   }
 
   reduceQuality(item) {
-    item.sellIn > 0 ? item.quality -= 1 : item.quality -=2
+    this.calculateQuality(item)
   }
 
   reduceSellIn(item) {
     item.sellIn -= 1
+  }
+
+  calculateQuality(item){
+    if (item.sellIn <= 0 && item.quality <= 0) {
+      item.quality = 0;
+    } else if (item.sellIn <= 0 && item.quality > 0) {
+      item.quality -=2 ;
+    } else {
+      item.quality -= 1;
+    }
   }
 
 
