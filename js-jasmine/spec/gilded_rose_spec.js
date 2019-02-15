@@ -41,7 +41,7 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(50);
   });
   
-  xit("updateQuality never decreases 'Sulfuras, Hand of Ragnaros's quality", function() {
+  it("updateQuality never decreases 'Sulfuras, Hand of Ragnaros's quality", function() {
     const gildedRose = new Shop([ new Item("Sulfuras, Hand of Ragnaros", 0, 50) ]);
     gildedRose.updateQuality();
     gildedRose.updateQuality();
@@ -49,7 +49,7 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(50);
   });
 
-  xit("updateQuality never decreases 'Sulfuras, Hand of Ragnaros's sellIn", function() {
+  it("updateQuality never decreases 'Sulfuras, Hand of Ragnaros's sellIn", function() {
     const gildedRose = new Shop([ new Item("Sulfuras, Hand of Ragnaros", 50, 50) ]);
     gildedRose.updateQuality();
     gildedRose.updateQuality();
