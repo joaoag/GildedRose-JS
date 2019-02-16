@@ -59,7 +59,9 @@ describe("Gilded Rose", function() {
 
   it("updateQuality increases Backstage pass quality as sellIn approaches", function() {
     const gildedRose = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", 15, 10) ]);
+    console.log(gildedRose.items[0])
     const items = gildedRose.updateQuality();
+    console.log(gildedRose.items[0])
     expect(items[0].quality).toEqual(11);
   });
 
@@ -76,7 +78,7 @@ describe("Gilded Rose", function() {
   }); 
 
   it("updateQuality reduces Backstage pass quality to 0 when sellIn passes", function() {
-    const gildedRose = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", 1, 10) ]);
+    const gildedRose = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10) ]);
     gildedRose.updateQuality();
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toEqual(0);
