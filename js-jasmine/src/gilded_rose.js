@@ -34,7 +34,11 @@ class Shop {
     }
 
     reduceSellIn(item) {
-        item.name != "Sulfuras, Hand of Ragnaros" ? item.sellIn -= 1 : item.sellIn = item.sellIn;
+        item.name != "Sulfuras, Hand of Ragnaros" ? item.sellIn -= 1 : this.sulfurasSellIn(item);
+    }
+
+    sulfurasSellIn(item) {
+        item.sellIn;
     }
 
     calculateQuality(item){
@@ -54,7 +58,7 @@ class Shop {
     }
 
     calculateSulfurasQuality(item){
-        item.quality = item.quality;
+        item.quality;
     }
 
     calculatePassesQuality(item){
