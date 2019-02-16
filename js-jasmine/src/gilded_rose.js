@@ -26,6 +26,8 @@ class Shop {
       this.calculateSulfurasQuality(item)
     } else if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
       this.calculatePassesQuality(item)
+    } else if (item.name == 'Conjured item') {
+      this.calculateConjuredQuality(item)
     } else {
       this.calculateQuality(item)
     }
@@ -65,6 +67,10 @@ class Shop {
     } else {
       item.quality += 3;
     }
+  }
+
+  calculateConjuredQuality(item){
+    item.quality -= 2
   }
 
 
