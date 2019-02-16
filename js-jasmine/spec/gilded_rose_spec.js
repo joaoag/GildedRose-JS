@@ -62,10 +62,11 @@ describe("Gilded Rose", function() {
         });
     });
     
-
-    it("updateQuality knows that Sulfuras's quality is 80", function() {
+describe("Sulfuras passed through #updateQuality has:", function(){
+    it("a quality of 80", function() {
+        const mockItemSulfuras = { name: "Sulfuras, Hand of Ragnaros", sellIn: 0, quality: 80 }
         const gildedRose = new Shop([
-        new Item("Sulfuras, Hand of Ragnaros", 0, 80) 
+        mockItemSulfuras
         ]);
         gildedRose.updateQuality();
         gildedRose.updateQuality();
@@ -73,25 +74,28 @@ describe("Gilded Rose", function() {
         expect(items[0].quality).toEqual(80);
     });
   
-    it("updateQuality never decreases 'Sulfuras, Hand of Ragnaros's quality", function() {
+    it("its quality fixed", function() {
+        const mockItemSulfuras = { name: "Sulfuras, Hand of Ragnaros", sellIn: 0, quality: 80 }
         const gildedRose = new Shop([
-        new Item("Sulfuras, Hand of Ragnaros", 0, 50) 
+        mockItemSulfuras
         ]);
         gildedRose.updateQuality();
         gildedRose.updateQuality();
         const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(50);
+        expect(items[0].quality).toEqual(80);
     });
 
-    it("updateQuality never decreases 'Sulfuras, Hand of Ragnaros's sellIn", function() {
+    it("its sellIn fixed", function() {
+        const mockItemSulfuras = { name: "Sulfuras, Hand of Ragnaros", sellIn: 0, quality: 80 }
         const gildedRose = new Shop([
-        new Item("Sulfuras, Hand of Ragnaros", 50, 50) 
+        mockItemSulfuras
         ]);
         gildedRose.updateQuality();
         gildedRose.updateQuality();
         const items = gildedRose.updateQuality();
-        expect(items[0].sellIn).toEqual(50);
+        expect(items[0].sellIn).toEqual(0);
     });
+});
 
     it("updateQuality increases Backstage pass quality as sellIn approaches", function() {
         const gildedRose = new Shop([
