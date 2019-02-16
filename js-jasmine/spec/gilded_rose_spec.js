@@ -2,61 +2,66 @@
 describe("Gilded Rose", function() {
 
     describe("normal items passed through #updateQuality have their:", function(){
-    it("quality initially reduced by 1", function() {
-        const mockItemBread = { name: "Bread", sellIn: 15, quality: 5 }
-        const gildedRose = new Shop([ 
-            mockItemBread
-        ]);
-        const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(4);
-    });
 
-    it("sellIn reduced by 1", function() {
-        const mockItemBread = { name: "Bread", sellIn: 15, quality: 5 }
-        const gildedRose = new Shop([ 
-            mockItemBread 
-        ]);
-        const items = gildedRose.updateQuality();
-        expect(items[0].sellIn).toEqual(14);
-    });
+        it("quality initially reduced by 1", function() {
+            const mockItemBread = { name: "Bread", sellIn: 15, quality: 5 }
+            const gildedRose = new Shop([ 
+                mockItemBread
+            ]);
+            const items = gildedRose.updateQuality();
+            expect(items[0].quality).toEqual(4);
+        });
 
-    it("quality reduced by 2 if SellIn <= 0", function() {
-        const mockItemRottenBread = { name: "Rotten Bread", sellIn: 0, quality: 2 }
-        const gildedRose = new Shop([ 
-            mockItemRottenBread
-        ]);
-        const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(0);
-    }); 
+        it("sellIn reduced by 1", function() {
+            const mockItemBread = { name: "Bread", sellIn: 15, quality: 5 }
+            const gildedRose = new Shop([ 
+                mockItemBread 
+            ]);
+            const items = gildedRose.updateQuality();
+            expect(items[0].sellIn).toEqual(14);
+        });
 
-    it("quality stopped from being < 0", function() {
-        const mockItemRottenBread = { name: "Rotten Bread", sellIn: 0, quality: 2 }
-        const gildedRose = new Shop([ 
-            mockItemRottenBread
-        ]);
-        gildedRose.updateQuality();
-        gildedRose.updateQuality();
-        const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(0);
-    });
-})
-    it("updateQuality *increases* the quality of Brie over time", function() {
-        const gildedRose = new Shop([
-            new Item("Aged Brie", 0, 1) 
-        ]);
-        const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(3);
-    });
+        it("quality reduced by 2 if SellIn <= 0", function() {
+            const mockItemRottenBread = { name: "Rotten Bread", sellIn: 0, quality: 2 }
+            const gildedRose = new Shop([ 
+                mockItemRottenBread
+            ]);
+            const items = gildedRose.updateQuality();
+            expect(items[0].quality).toEqual(0);
+        }); 
 
-    it("updateQuality limits the quality all normal items to 50", function() {
-        const gildedRose = new Shop([
-            new Item("Aged Brie", 0, 49) 
-        ]);
-        gildedRose.updateQuality();
-        gildedRose.updateQuality();
-        const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(50);
+        it("quality stopped from being < 0", function() {
+            const mockItemRottenBread = { name: "Rotten Bread", sellIn: 0, quality: 2 }
+            const gildedRose = new Shop([ 
+                mockItemRottenBread
+            ]);
+            gildedRose.updateQuality();
+            gildedRose.updateQuality();
+            const items = gildedRose.updateQuality();
+            expect(items[0].quality).toEqual(0);
+        });
+});
+    describe("Aged Brie passed through #updateQuality has:", function(){
+        it("its quality increased over time", function() {
+            const mockItemEarlyAgedBrie = { name: "Aged Brie", sellIn: 0, quality: 1 }
+            const gildedRose = new Shop([
+                mockItemEarlyAgedBrie
+            ]);
+            const items = gildedRose.updateQuality();
+            expect(items[0].quality).toEqual(3);
+        });
+        it("its quality limited to 50", function() {
+            const mockItemLateAgedBrie = { name: "Aged Brie", sellIn: -20, quality: 49 }
+            const gildedRose = new Shop([
+                mockItemLateAgedBrie
+            ]);
+            gildedRose.updateQuality();
+            gildedRose.updateQuality();
+            const items = gildedRose.updateQuality();
+            expect(items[0].quality).toEqual(50);
+        });
     });
+    
 
     it("updateQuality knows that Sulfuras's quality is 80", function() {
         const gildedRose = new Shop([
