@@ -126,12 +126,13 @@ describe("Backstage Passes passed through #updateQuality have their:", function(
 
     it("quality reduced to 0 when sellIn < 0", function() {
         const mockItemPass = { name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 0, quality: 10 }
+            console.log(mockItemPass)
         const gildedRose = new Shop([
         mockItemPass 
         ]);
-        console.log(gildedRose.items[0])
+            console.log(gildedRose.items[0])
         const items = gildedRose.updateQuality();
-        console.log(gildedRose.items[0])
+            console.log(gildedRose.items[0])
         expect(items[0].quality).toEqual(0);
     }); 
 });

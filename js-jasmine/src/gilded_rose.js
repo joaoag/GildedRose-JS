@@ -13,8 +13,8 @@ class Shop {
 
     updateQuality() {
         for (var i = 0; i < this.items.length; i ++) {
-            this.reduceQuality(this.items[i]);
             this.reduceSellIn(this.items[i]);
+            this.reduceQuality(this.items[i]);
         }
         return this.items;
     }
