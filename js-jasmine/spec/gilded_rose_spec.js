@@ -67,9 +67,7 @@ describe("Gilded Rose", function() {
 
   it("updateQuality increases Backstage pass quality as sellIn approaches", function() {
     const gildedRose = new Shop([ new Item("Backstage passes to a TAFKAL80ETC concert", 15, 10) ]);
-    console.log(gildedRose.items[0])
     const items = gildedRose.updateQuality();
-    console.log(gildedRose.items[0])
     expect(items[0].quality).toEqual(11);
   });
 
@@ -92,10 +90,24 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(0);
   }); 
 
-  xit("updateQuality reduces conjured items' quality twice as fast as normal items", function() {
-    const gildedRose = new Shop([ new Item("Conjoured item", 10, 10) ]);
+  it("updateQuality reduces conjured items' quality twice as fast as normal items", function() {
+    const gildedRose = new Shop([ new Item("Conjured item", 10, 10) ]);
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toEqual(8);
+  });
+
+  it("updateQuality reduces conjured items' quality by 4 once SellIn passes", function() {
+    const gildedRose = new Shop([ new Item("Conjured item", 0, 10) ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(6);
+  });
+
+  it("updateQuality keeps conjured items' quality >= 0", function() {
+    const gildedRose = new Shop([ new Item("Conjured item", 0, 1) ]);
+    console.log(gildedRose.items[0])
+    const items = gildedRose.updateQuality();
+    console.log(gildedRose.items[0])
+    expect(items[0].quality).toEqual(0);
   });
 
 });
