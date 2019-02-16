@@ -100,7 +100,53 @@ Minimum Viable Product (MVP):
 
 I've decided my MVP will be refactoring the functionality of the Shop class updateQuality function into three functions in total. 
 
+This was reached quite early into the project.
 
+Next goal is to meet the 'Normal' requirements below
+
+Testing:
+
+Started with a feature test
+All tests passing
+Test coverage high (currently 100%)
+Unit tests mock the dependencies of the object they are testing
+Readability:
+
+Rubocop - only three warnings for line length
+Variable, method, & class names clear and descriptive (see Rubocop warnings...)
+Can offer simple explanation of how the program works "The program tracks deposits and withdrawals, the date they were made and the resulting balance. Using this stored information, it can also print out a statement showing the account history. It's made of three classes: Statement, Transaction and Account"
+README & Commits:
+
+Describes how to install dependencies, run tests, and run the project
+
+Describes my approach
+
+Describes how I structured my code and why
+
+Includes a screenshot of your running app
+
+Has reasonable spelling & grammar
+
+Commit messages clearly describe what that commit does
+
+Design:
+
+Classes adhere to single responsibility principle:
+
+Account: Keeps track of account history (withdrawals, deposits, balance, dates of these)
+
+Statement: Outputs account history into console table
+
+Transaction: Carries value of transaction and transaction date information to Account
+
+For future: I would split Statement into FormatStatement and PrintStatement
+
+Each method & class is (almost) as small as possible (see above)
+
+Common Problems Avoided: One or two classes that do all the work 
+One class is significantly longer than all of the others 
+Most methods don't return anything, instead they modify instance variables
+The feature tests don't use a test framework (e.g. RSpec or Jasmine)
 
 
 Approach:
