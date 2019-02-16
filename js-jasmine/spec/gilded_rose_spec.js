@@ -98,4 +98,10 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(8);
   });
 
+  it("updateQuality reduces conjured items' quality by 4 once SellIn passes", function() {
+    const gildedRose = new Shop([ new Item("Conjured item", 0, 10) ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(6);
+  });
+
 });

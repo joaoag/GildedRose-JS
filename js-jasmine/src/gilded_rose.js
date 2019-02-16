@@ -74,6 +74,9 @@ class Shop {
   }
 
 
+
+
+
   // updateQuality() {
   //   for (var i = 0; i < this.items.length; i++) {
   //     if (this.items[i].name != 'Aged Brie' && this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
