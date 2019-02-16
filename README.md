@@ -112,9 +112,10 @@ Test coverage high (currently 100%)
 Unit tests mock the dependencies of the object they are testing
 Readability:
 
-Rubocop - only three warnings for line length
-Variable, method, & class names clear and descriptive (see Rubocop warnings...)
-Can offer simple explanation of how the program works "The program tracks deposits and withdrawals, the date they were made and the resulting balance. Using this stored information, it can also print out a statement showing the account history. It's made of three classes: Statement, Transaction and Account"
+Eslint - only three warnings
+Variable, method, & class names clear and descriptive
+Can offer simple explanation of how the program works "The program tracks items and updates their value and sell by date. It's currently made of two classes: Shop and Item"
+
 README & Commits:
 
 Describes how to install dependencies, run tests, and run the project
