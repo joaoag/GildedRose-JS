@@ -104,4 +104,10 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(6);
   });
 
+  it("updateQuality keeps conjured items' quality >= 0", function() {
+    const gildedRose = new Shop([ new Item("Conjured item", 0, 1) ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(0);
+  });
+
 });
