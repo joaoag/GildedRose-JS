@@ -33,12 +33,20 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(3);
   });
 
-  it("updateQuality limits the quality all items to 50", function() {
+  it("updateQuality limits the quality all normal items to 50", function() {
     const gildedRose = new Shop([ new Item("Aged Brie", 0, 49) ]);
     gildedRose.updateQuality();
     gildedRose.updateQuality();
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toEqual(50);
+  });
+
+  it("updateQuality knows that Sulfuras's quality is 80", function() {
+    const gildedRose = new Shop([ new Item("Sulfuras, Hand of Ragnaros", 0, 80) ]);
+    gildedRose.updateQuality();
+    gildedRose.updateQuality();
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toEqual(80);
   });
   
   it("updateQuality never decreases 'Sulfuras, Hand of Ragnaros's quality", function() {
