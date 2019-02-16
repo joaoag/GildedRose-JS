@@ -96,62 +96,68 @@ describe("Sulfuras passed through #updateQuality has:", function(){
         expect(items[0].sellIn).toEqual(0);
     });
 });
-
-    it("updateQuality increases Backstage pass quality as sellIn approaches", function() {
+describe("Backstage Passes passed through #updateQuality have their:", function(){
+    it("quality increased as sellIn approaches 0", function() {
+        const mockItemPass = { name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 15, quality: 10 }
         const gildedRose = new Shop([
-        new Item("Backstage passes to a TAFKAL80ETC concert", 15, 10) 
+        mockItemPass 
         ]);
         const items = gildedRose.updateQuality();
         expect(items[0].quality).toEqual(11);
     });
 
-    it("updateQuality increases Backstage pass quality by 2 when sellIn is < 10", function() {
+    it("quality increased by 2 when sellIn is < 10", function() {
+        const mockItemPass = { name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 9, quality: 10 }
         const gildedRose = new Shop([
-        new Item("Backstage passes to a TAFKAL80ETC concert", 9, 10) 
+        mockItemPass 
         ]);
         const items = gildedRose.updateQuality();
         expect(items[0].quality).toEqual(12);
     });
 
-    it("updateQuality increases Backstage pass quality by 3 when sellIn is < 5", function() {
+    it("quality increased by 3 when sellIn is < 5", function() {
+        const mockItemPass = { name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 4, quality: 10 }
         const gildedRose = new Shop([
-        new Item("Backstage passes to a TAFKAL80ETC concert", 4, 10) 
+        mockItemPass 
         ]);
         const items = gildedRose.updateQuality();
         expect(items[0].quality).toEqual(13);
     }); 
 
-    it("updateQuality reduces Backstage pass quality to 0 when sellIn passes", function() {
+    it("quality reduced to 0 when sellIn < 0", function() {
+        const mockItemPass = { name: "Backstage passes to a TAFKAL80ETC concert", sellIn: 0, quality: 10 }
         const gildedRose = new Shop([
-        new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10) 
+        mockItemPass 
         ]);
-        gildedRose.updateQuality();
+        console.log(gildedRose.items[0])
         const items = gildedRose.updateQuality();
+        console.log(gildedRose.items[0])
         expect(items[0].quality).toEqual(0);
     }); 
+});
+    describe("Conjured items passed through #updateQuality have their:", function() {
+        it("quality reduced twice as fast as normal items", function() {
+            const gildedRose = new Shop([
+            new Item("Conjured item", 10, 10) 
+            ]);
+            const items = gildedRose.updateQuality();
+            expect(items[0].quality).toEqual(8);
+        });
 
-    it("updateQuality reduces conjured items' quality twice as fast as normal items", function() {
-        const gildedRose = new Shop([
-        new Item("Conjured item", 10, 10) 
-        ]);
-        const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(8);
+        it("quality reduced by 4 once SellIn passes", function() {
+            const gildedRose = new Shop([
+            new Item("Conjured item", 0, 10) 
+            ]);
+            const items = gildedRose.updateQuality();
+            expect(items[0].quality).toEqual(6);
+        });
+
+        it("quality kept >= 0", function() {
+            const gildedRose = new Shop([
+            new Item("Conjured item", 0, 1) 
+            ]);
+            const items = gildedRose.updateQuality();
+            expect(items[0].quality).toEqual(0);
+        });
     });
-
-    it("updateQuality reduces conjured items' quality by 4 once SellIn passes", function() {
-        const gildedRose = new Shop([
-        new Item("Conjured item", 0, 10) 
-        ]);
-        const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(6);
-    });
-
-    it("updateQuality keeps conjured items' quality >= 0", function() {
-        const gildedRose = new Shop([
-        new Item("Conjured item", 0, 1) 
-        ]);
-        const items = gildedRose.updateQuality();
-        expect(items[0].quality).toEqual(0);
-    });
-
 });
