@@ -134,13 +134,6 @@ Design:
 
 Classes adhere to single responsibility principle:
 
-Account: Keeps track of account history (withdrawals, deposits, balance, dates of these)
-
-Statement: Outputs account history into console table
-
-Transaction: Carries value of transaction and transaction date information to Account
-
-For future: I would split Statement into FormatStatement and PrintStatement
 
 Each method & class is (almost) as small as possible (see above)
 
