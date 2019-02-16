@@ -1,4 +1,4 @@
-describe("Gilded Rose: Item", function() {
+describe("Unit Test: Item", function() {
 
     it("should store item name, quality and sellIn properties", function() {
         const bread = new Item("Bread", 2, 2);
