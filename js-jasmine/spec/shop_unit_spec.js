@@ -1,5 +1,12 @@
 
-describe("Gilded Rose", function() {
+describe("Gilded Rose: Shop", function() {
+
+    describe("initialised with", function() {
+        it("an empty array called 'items'", function() {
+            const gildedRose = new Shop();
+            expect(gildedRose.items).toEqual([]);
+        });
+    });
 
     describe("normal items passed through #updateQuality have their:", function(){
 
