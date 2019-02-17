@@ -21,6 +21,5 @@ class Sort {
             this.normal.calculateQuality(item);
         }
     }
-
-
+    
 }

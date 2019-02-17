@@ -1,4 +1,5 @@
 class ConjuredUpdate {
+    
     calculateQuality(item){
         if (item.quality >= 50) {
             item.quality = 50;
@@ -12,4 +13,5 @@ class ConjuredUpdate {
             item.quality -= 2;
         }
     }
+    
 }

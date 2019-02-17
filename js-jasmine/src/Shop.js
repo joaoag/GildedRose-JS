@@ -24,5 +24,4 @@ class Shop {
         if (item.name != "Sulfuras, Hand of Ragnaros") item.sellIn -= 1;
     }
 
-
 }
