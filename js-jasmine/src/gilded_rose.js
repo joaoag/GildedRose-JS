@@ -7,9 +7,10 @@ class Item {
 }
 
 class Shop {
-    constructor(items=[], normal = new NormalUpdate){
+    constructor(items=[], normal = new NormalUpdate, brie = new BrieUpdate){
         this.items = items;
         this.normal = normal;
+        this.brie = brie;
 
     }
 
@@ -23,7 +24,7 @@ class Shop {
 
     reduceQuality(item) {
         if (item.name == "Aged Brie") {
-            this.calculateBrieQuality(item);
+            this.brie.calculateQuality(item);
         } else if (item.name == "Sulfuras, Hand of Ragnaros") {
             this.calculateSulfurasQuality(item);
         } else if (item.name == "Backstage passes to a TAFKAL80ETC concert") {
@@ -45,9 +46,7 @@ class Shop {
 
 
 
-    calculateBrieQuality(item){
-        item.quality >= 50 ? item.quality = 50 : item.quality += 2;
-    }
+    
 
     calculateSulfurasQuality(item){
         item.quality;
