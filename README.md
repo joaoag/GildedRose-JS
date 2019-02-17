@@ -106,43 +106,56 @@ Next goal is to meet the 'Normal' requirements below
 
 Testing:
 
-Started with a feature test<br>
-All tests passing<br>
-Test coverage high <br>
-Unit tests mock the dependencies of the object they are testing<br>
+* Started with a feature test
+* All tests passing
+* Test coverage high
+* Unit tests mock the dependencies of the object they are testing
 
 Readability:
 
-Eslint - only three warnings <br>
-Variable, method, & class names clear and descriptive <br>
-Can offer simple explanation of how the program works "The program tracks items and updates their value and sell by date. It's currently made of two classes: Shop and Item"
+* Eslint - only three warnings
+* Variable, method, & class names clear and descriptive
+* Can offer simple explanation of how the program works "The program tracks items and updates their value and sell by date."
 
 README & Commits:
 
-Describes how to install dependencies, run tests, and run the project
+* Describes how to install dependencies, run tests, and run the project
 
-Describes my approach
+* Describes my approach
 
-Describes how I structured my code and why
+* Describes how I structured my code and why
 
-Includes a screenshot of your running app
+* Includes a screenshot of your running app
 
-Has reasonable spelling & grammar
+* Has reasonable spelling & grammar
 
-Commit messages clearly describe what that commit does
+* Commit messages clearly describe what that commit does
 
 Design:
 
-Classes adhere to single responsibility principle:
+* Classes adhere to single responsibility principle:
 
 
-Each method & class is (almost) as small as possible (see above)
+* Each method & class is (almost) as small as possible (see above)
 
-Common Problems Avoided: One or two classes that do all the work 
-One class is significantly longer than all of the others 
-Most methods don't return anything, instead they modify instance variables
-The feature tests don't use a test framework (e.g. RSpec or Jasmine)
+Common Problems Avoided: <br>
+One or two classes that do all the work <br>
+One class is significantly longer than all of the others <br>
+Most methods don't return anything, instead they modify instance variables <br>
+The feature tests don't use a test framework (e.g. RSpec or Jasmine) <br>
 
+**Additional Requirements:**
+
+Testing:
+  * Where possible always testing for behaviour, rather than state
+  * Test descriptions read clearly
+  * Make appropriate use of the testing framework's methods to keep your test code clean ('let' and 'context' blocks used - to be used 'subject')
+
+
+Design:
+  * Each method is fewer than 7 lines
+  * Classes are fewer than 50 lines
+  * Clear separation between your program logic and output
 
 Approach:
 -----
