@@ -4,7 +4,7 @@ class SulfurasUpdate {
         item.sellIn;
     }
 
-     calculateQuality(item){
-      item.quality;
+    calculateQuality(item){
+        item.quality;
     }
 }

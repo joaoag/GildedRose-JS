@@ -1,5 +1,5 @@
 class BrieUpdate {
-  calculateQuality(item){
+    calculateQuality(item){
         item.quality >= 50 ? item.quality = 50 : item.quality += 2;
     }
 }

@@ -21,7 +21,7 @@ class Shop {
     }
 
     reduceSellIn(item) {
-        if (item.name != "Sulfuras, Hand of Ragnaros") item.sellIn -= 1
+        if (item.name != "Sulfuras, Hand of Ragnaros") item.sellIn -= 1;
     }
 
 
