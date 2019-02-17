@@ -106,14 +106,15 @@ Next goal is to meet the 'Normal' requirements below
 
 Testing:
 
-Started with a feature test
-All tests passing
-Test coverage high (currently 100%)
-Unit tests mock the dependencies of the object they are testing
+Started with a feature test<br>
+All tests passing<br>
+Test coverage high <br>
+Unit tests mock the dependencies of the object they are testing<br>
+
 Readability:
 
-Eslint - only three warnings
-Variable, method, & class names clear and descriptive
+Eslint - only three warnings <br>
+Variable, method, & class names clear and descriptive <br>
 Can offer simple explanation of how the program works "The program tracks items and updates their value and sell by date. It's currently made of two classes: Shop and Item"
 
 README & Commits:
@@ -199,22 +200,18 @@ Improvements:
 Technologies used
 -------
 
-* RSpec
-* Ruby
-* Rubocop
-* Travis CI
+* Jasmine
+* JS
+* ESlint
 
 
-
-## How to use bank_tech_test ##
+## How to use GildedRose-Refactoring-Kata ##
 
 System requirements
 -------
 
-* Ruby 2.5.0
 * Mac OS X
 * Chrome browser
-
 
 
 ### Set up ###
@@ -229,61 +226,43 @@ Use the `git clone` command and paste the clone URL then press enter :
 $ git clone 
 ```
 
-2. On your local machine go inside of the *bank_tech_test* directory :
+2. On your local machine go inside of the *GildedRose-Refactoring-Kata* directory :
 
 ```shell
-$ cd bank_tech_test
+$ cd GildedRose-Refactoring-Kata
 ```
-3. To install all the *gems* contained in the *Gemfile*, install and run *Bundle* :
-Install :
 
-```shell
-$ install bundle
-```
-Run:
-
-```shell
-$ bundle
-```
-4. You can see the different directories, with the `ls` command.
+3. You can see the different directories, with the `ls` command.
 
 
 ```
 
 ### Run the tests ###
 
-1. Check that the codes are passing the test. From the root *bank_tech_test* directory, run the *spec*.<br/>
+1. Check that the codes are passing the test. From the root *GildedRose-Refactoring-Kata* directory, run the *spec*.<br/>
 You can check all the files in one go:
 
 ```shell
-$ cd bank_tech_test
-$ rspec
-```
-To check only one file at a time :
-
-```shell
-$ cd bank_tech_test
-$ rspec spec/file_name_spec.rb
+$ cd GildedRose-Refactoring-Kata
+$ open SpecRunner.html
 ```
 
-2. Check that the code respects the quality of the *Rubocop* guideline, by running `rubocop` from the *bank_tech_test* directory :
+2. Check that the code respects the quality of the *Eslint* guideline, by running `eslint` from the *GildedRose-Refactoring-Kata* directory :
 
 ```shell
-$ cd bank_tech_test
-$ rubocop
+$ cd GildedRose-Refactoring-Kata
+$ eslint js-jasmine/src/**
 ```
 
 ## Run the app ##
 
-1. On the command line, from the root directory *bank_tech_test*, use the `irb` command :
+1. Open Chrome, press `Ctrl+Shift+j` and it opens the JavaScript
 
-```shell
-$ cd bank_tech_test
-$ irb
-```
-2. Follow the steps below to create an account, a statement, withdraw and deposit amounts and output the result of these to the console.
+2. Paste all of the code from gilded_rose.js into the console
 
-<img src="./screenshots/bank_tech_test_screenshot.png">
+3. Follow the steps below to create a shop, add an item, update the item's quality and sellIn and output the result of these to the console.
+
+<img src="./screenshots/GildedRose-Refactoring-Kata_screenshot.png">
 
 
 
