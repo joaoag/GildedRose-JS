@@ -7,11 +7,12 @@ class Item {
 }
 
 class Shop {
-    constructor(items=[], normal = new NormalUpdate, brie = new BrieUpdate, sulfuras = new SulfurasUpdate){
+    constructor(items=[], normal = new NormalUpdate, brie = new BrieUpdate, sulfuras = new SulfurasUpdate, pass = new PassesUpdate){
         this.items = items;
         this.normal = normal;
         this.brie = brie;
         this.sulfuras = sulfuras;
+        this.pass = pass;
     }
 
     updateQuality() {
@@ -28,7 +29,7 @@ class Shop {
         } else if (item.name == "Sulfuras, Hand of Ragnaros") {
             this.sulfuras.calculateQuality(item);
         } else if (item.name == "Backstage passes to a TAFKAL80ETC concert") {
-            this.calculatePassesQuality(item);
+            this.pass.calculateQuality(item);
         } else if (item.name == "Conjured item") {
             this.calculateConjuredQuality(item);
         } else {
@@ -38,26 +39,6 @@ class Shop {
 
     reduceSellIn(item) {
         item.name != "Sulfuras, Hand of Ragnaros" ? item.sellIn -= 1 : this.sulfuras.SellIn(item);
-    }
-
-    
-
-
-
-    
-
-
-
-    calculatePassesQuality(item){
-        if (item.sellIn < 0) {
-            item.quality = 0;
-        } else if (item.sellIn < 10 && item.sellIn > 5) {
-            item.quality += 2;
-        } else if (item.sellIn >= 10) {
-            item.quality += 1;
-        } else {
-            item.quality += 3;
-        }
     }
 
     calculateConjuredQuality(item){
