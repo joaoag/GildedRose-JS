@@ -172,22 +172,21 @@ Approach:
 
 Program Structure:
 -----
-
-The Account class is responsible for monitoring the account history. It has methods for making withdrawals and deposits and keeping track of the dates on which they were made and the balance that resulted from these transactions.
-
-The Statement class is responsible for outputting this information into the format described in the 'Acceptance Criteria' section above.
-
-There are no dependencies between the classes.
+Item: Instances of item have a name, value and sellIn <br>
+Shop: Stores an array of items  <br>
+SellIn: Calculates an item's SellIn <br>
+Sort: Decides how an item's updated value should be calculated <br>
+Sulfuras, Backstage, Normal, Conjured and Brie: Each calculates their respective item type's changing value <br>
 
 
 Outcome:
 -----
 
-* Everything created using strict TDD (all tests passing, 100% test coverage)
+* Everything created using strict TDD (all tests passing)
 
 * Practised Git workflow, working on specific branches for each feature before merging back into master (committing with each significant piece of work finished) 
 
-* First four user stories met
+* All user stories met
 
 
 
