@@ -1,4 +1,4 @@
-class NormalUpdate {
+class Normal {
 
     calculateQuality(item){
         if (item.quality >= 50) {

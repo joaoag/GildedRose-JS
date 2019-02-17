@@ -1,4 +1,4 @@
-class PassesUpdate {
+class Passes {
     
     calculateQuality(item){
         if (item.sellIn < 0) {

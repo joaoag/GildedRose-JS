@@ -1,6 +1,6 @@
 class Sort {
 
-    constructor(normal = new NormalUpdate, brie = new BrieUpdate, sulfuras = new SulfurasUpdate, pass = new PassesUpdate, conjured = new ConjuredUpdate){
+    constructor(normal = new Normal, brie = new Brie, sulfuras = new Sulfuras, pass = new Passes, conjured = new Conjured){
         this.normal = normal;
         this.brie = brie;
         this.sulfuras = sulfuras;
